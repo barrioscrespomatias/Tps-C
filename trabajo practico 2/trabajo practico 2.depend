@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1537991268 source:c:\users\matias\desktop\trabajo practico 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"arrayDeEmployees.h"
+
+1537987697 c:\users\matias\desktop\trabajo practico 2\arraydeemployees.h
+
+1537987697 source:c:\users\matias\desktop\trabajo practico 2\arraydeemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"arrayDeEmployees.h"
+
