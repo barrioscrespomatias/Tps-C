@@ -34,7 +34,12 @@ LinkedList* ll_newLinkedList(void)
 
 int ll_len(LinkedList* this)
 {
-    int elementosAux = 0;
+    int elementosAux = -1;
+
+    if(this!= NULL)
+    {
+        elementosAux = this->size;
+    }
 
 
 
@@ -53,35 +58,28 @@ int ll_len(LinkedList* this)
  */
 static Node* getNode(LinkedList* this, int nodeIndex)
 {
-    Node* pNode = NULL;
+    Node* pNode = NULL;// Define puntero a nodo como NULL(PRIMER NODO)
     int i;
-    if(this != NULL)
-    for (int i=0; i<ll_len(this); i++)
+    if(this != NULL && nodeIndex >= 0 && nodeIndex<ll_len(this))//Condiciones para recorrer la lista
+//
     {
-        if(pNode!= NULL)
+        pNode = this->pFirstNode;
+        for (i=0; i<ll_len(this); i++)
         {
-            if(i== nodeIndex)
+            if(pNode == NULL|| i== nodeIndex)//Pregunto si es el ultimo nodo o es igual al indice
             {
                 break;
             }
 
             else
             {
-                pNode= pNode->pNextNode;
+                pNode= pNode->pNextNode;// Nodo siguiente
             }
-        }
-        else if(i == nodeIndex)
-        {
-            pNode = NULL;
-        }
-        else
-        {
 
         }
     }
 
-
-    return pNode;
+    return pNode;//Devuelvo el puntero al nodo
 }
 
 /** \brief  Permite realizar el test de la funcion getNode la cual es privada
@@ -107,25 +105,12 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
                         ( 0) Si funciono correctamente
  *
  */
+
 static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
     int returnAux = -1;
 
-    if(this != NULL)
-
-    {
-        Node *nuevo_nodo;
-        if(nuevo_nodo != NULL)
-        {
-            pElement= NULL;
-            nodeIndex = Node->pNextNode;
-        }
-
-
-    }
-
-
-
+    getNode(this,nodeIndex);
 
     return returnAux;
 }
@@ -372,7 +357,7 @@ LinkedList* ll_clone(LinkedList* this)
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
                                 ( 0) Si ok
  */
-int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
+int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 {
     int returnAux =-1;
 

@@ -26,9 +26,9 @@
 
 int main(void)
 {
-        startTesting(1);  // ll_newLinkedList
+//        startTesting(1);  // ll_newLinkedList
 //        startTesting(2);  // ll_len
-//        startTesting(3);  // getNode - test_getNode
+        startTesting(3);  // getNode - test_getNode
 //        startTesting(4);  // addNode - test_addNode
 //        startTesting(5);  // ll_add
 //        startTesting(6);  // ll_get
