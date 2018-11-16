@@ -34,7 +34,7 @@ int main(void)
 //        startTesting(6);  // ll_get
 //        startTesting(7);  // ll_set
 //        startTesting(8);  // ll_remove
-        startTesting(9);  // ll_clear
+//        startTesting(9);  // ll_clear
 //        startTesting(10); // ll_deleteLinkedList
 //        startTesting(11); // ll_indexOf
 //        startTesting(12); // ll_isEmpty
@@ -42,7 +42,7 @@ int main(void)
 //        startTesting(14); // ll_pop
 //        startTesting(15); // ll_contains
 //        startTesting(16); // ll_containsAll
-//        startTesting(17); // ll_subList
+        startTesting(17); // ll_subList
 //        startTesting(18); // ll_clone
 //        startTesting(19); // ll_sort */
 
