@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1541687491 source:e:\laboratorio 8-10\utn\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1541687491 e:\laboratorio 8-10\utn\utn.h
+
