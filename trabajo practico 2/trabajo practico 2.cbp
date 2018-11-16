@@ -30,7 +30,13 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="../../../Laboratorio 8-10/UTN" />
+			<Add directory="../../../Laboratorio 8-10" />
 		</Compiler>
+		<Unit filename="../UTN/utn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../UTN/utn.h" />
 		<Unit filename="arrayDeEmployees.c">
 			<Option compilerVar="CC" />
 		</Unit>

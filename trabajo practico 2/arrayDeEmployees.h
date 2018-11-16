@@ -11,6 +11,14 @@ typedef struct
     int isEmpty;
 } eEmpleado;
 
+static int generarNextId()
+{
+    static int id = -1;
+
+    id ++;
+
+    return id;
+}
 
 int initEmployees(eEmpleado* lista, int tam);
 int obtenerEspacioLibre(eEmpleado* lista, int tam);

@@ -15,7 +15,7 @@ int main()
     int opcion= 0;
     int r;
 
-    r = initEmployees(personas, CANT_EMPLEADOS);
+    r = inicializarEmpleados(personas, CANT_EMPLEADOS);
 
     do
     {
@@ -34,8 +34,8 @@ int main()
         case 1:
             r = altaEmpleado(personas,CANT_EMPLEADOS);
             break;
-
         case 2:
+
             break;
         case 3:
             break;
