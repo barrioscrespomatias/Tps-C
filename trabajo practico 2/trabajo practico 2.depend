@@ -15,7 +15,7 @@
 	<conio.h>
 	"arrayDeEmployees.h"
 
-1542301604 source:e:\repositorio github\trabajopracticon1-master\trabajo practico 2\arraydeemployees.c
+1542551671 source:e:\repositorio github\trabajopracticon1-master\trabajo practico 2\arraydeemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23,13 +23,14 @@
 	<../UTN/utn.h>
 	"arrayDeEmployees.h"
 
-1542300506 e:\repositorio github\trabajopracticon1-master\trabajo practico 2\arraydeemployees.h
+1542551300 e:\repositorio github\trabajopracticon1-master\trabajo practico 2\arraydeemployees.h
 
-1542300716 source:e:\repositorio github\trabajopracticon1-master\trabajo practico 2\main.c
+1542551300 source:e:\repositorio github\trabajopracticon1-master\trabajo practico 2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
+	<../UTN/utn.h>
 	"arrayDeEmployees.h"
 
 1541687491 source:e:\laboratorio 8-10\utn\utn.c

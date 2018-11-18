@@ -11,6 +11,9 @@ typedef struct
     int isEmpty;
 } eEmpleado;
 
+
+
+// ID UTILIZADO PARA CUALQUIER ESTRUCTURA
 static int generarNextId()
 {
     static int id = -1;
@@ -20,16 +23,26 @@ static int generarNextId()
     return id;
 }
 
-int initEmployees(eEmpleado* lista, int tam);
+int inicializarEmpleados(eEmpleado *listaEmpleados, int tam);
 int obtenerEspacioLibre(eEmpleado* lista, int tam);
 
-int addEmployees(eEmpleado* lista, int tam, int id, char nombre[], char apellido[], float salario, int sector);
-int altaEmpleado(eEmpleado* lista, int tam);
-int findEmployeeById(eEmpleado* lista, int tam,int id);
-int removeEmployee(eEmpleado* lista, int tam, int id);
+int addEmployees(eEmpleado *listaEmpleados, int tamEmpleados, int auxId, char auxNombre[], char auxApellido[], float auxSalario, int auxSector);
+int altaEmpleado(eEmpleado* listaEmpleados, int tamEmpleados);
+int buscarEmpleadoPorId (eEmpleado *listaEmpleados, int tam, int id);
+int modificarEmpleado(eEmpleado* listaEmpleados, int tamEmpleados);
+int removeEmployee(eEmpleado* listaEmpleados, int tamEmpleados);
 int sortEmployees(eEmpleado* lista, int len, int orden);
 int mostrarUnEmpleado(eEmpleado unoSolo);
 int printEmployees(eEmpleado* lista, int tam);
+void hardcodearEmpleados(eEmpleado x[]);
+int ordenarEmpleados(eEmpleado* listaEmpleados, int tamEmpleados, int order);
+float sumarSalarios(eEmpleado* listaEmpleados, int tamEmpleados);
+float promedioSalarios(eEmpleado* listaEmpleados, int tamEmpleados, float sumarSalarios);
+int cantidadEmpleadosMayorPromedio(eEmpleado* listaEmpleados, int tamEmpleados, float promedioSalarios);
+
+
+
+
 
 
 
