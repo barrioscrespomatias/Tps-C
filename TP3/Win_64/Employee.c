@@ -80,7 +80,7 @@ int employee_getId(Employee *this, int *id)
 {
     int todoOk = 0;
 
-    if(this!= NULL && id> 0 && id!=NULL)
+    if(this!= NULL && id> 0)
     {
         *id = this->id;
         todoOk = 1;
@@ -92,7 +92,8 @@ int employee_getId(Employee *this, int *id)
 int employee_getNombre(Employee* this,char* nombre)
 {
     int todoOk = 0;
-    if(this != NULL && nombre != NULL){
+    if(this != NULL && nombre != NULL)
+    {
         strcpy(nombre, this->nombre);
         todoOk = 1;
     }
@@ -103,7 +104,7 @@ int employee_getHorasTrabajadas(Employee*this, int *horasTrabajadas)
 {
     int todoOk = 0;
 
-    if(this != NULL && horasTrabajadas && NULL && horasTrabajadas>0)
+    if(this != NULL && horasTrabajadas>0)
     {
         *horasTrabajadas = this-> horasTrabajadas;
         todoOk = 1;
@@ -116,7 +117,7 @@ int employee_getSueldo(Employee* this, int *sueldo)
 {
     int todoOk = 0;
 
-    if(this != NULL && sueldo && NULL && sueldo>0)
+    if(this != NULL && sueldo>0)
     {
         *sueldo = this-> sueldo;
         todoOk = 1;
@@ -127,8 +128,11 @@ int employee_getSueldo(Employee* this, int *sueldo)
 
 
 
-Employee* employee_newParametros(char* idStr, char * nombreStr, char * horasTrabajasStr, char *salario)
+Employee* employee_newParametros(char* idStr, char * nombreStr, char * horasTrabajadasStr, char *salario)
 {
+
+
+
     int idAux, horasTrabajadasAux;
     float salarioAux;
     int sePudoCargar = 1;
@@ -139,21 +143,34 @@ Employee* employee_newParametros(char* idStr, char * nombreStr, char * horasTrab
 
     idAux = atoi(idStr);
     if(employee_setId(this, idAux)!= 1)
-    sePudoCargar = 0;
+    {
+        sePudoCargar = 0;
 
-    horasTrabajadasAux = atoi(horasTrabajasStr);
+    }
+
+    horasTrabajadasAux = atoi(horasTrabajadasStr);
     if(employee_setHorasTrabajadas(this, horasTrabajadasAux)!= 1)
-    sePudoCargar = 0;
+    {
+        sePudoCargar = 0;
+
+    }
 
     if(employee_setNombre(this, nombreStr)!= 1)
-    sePudoCargar = 0;
+    {
+        sePudoCargar = 0;
+
+    }
 
     salarioAux = atoi(salario);
-    if(employee_setSueldo(this, salarioAux)!= 1)
-    sePudoCargar = 0;
 
-//    if(sePudoCargar == 1)
-//    printf("\nEmpleado cargado correctamente\n");
+    if(employee_setSueldo(this, salarioAux)!= 1)
+    {
+        sePudoCargar = 0;
+
+    }
+
+    if(sePudoCargar == 0)
+    printf("\nError al cargar los datos\n");
 
 
     return this;
@@ -183,7 +200,7 @@ int employeeSortById(void * empleadoA, void * empleadoB)
     }
 
 
-        return retorno;
+    return retorno;
 }
 
 
@@ -213,6 +230,18 @@ int employeeSortBySueldo(void * empleadoA, void *empleadoB)
 }
 
 
+void employee_printData(Employee* this)
+{
+    int id, sueldo, horasTrabajadas;
+    char nombre[31];
+
+    employee_getId(this, &id);
+    employee_getNombre(this, nombre);
+    employee_getHorasTrabajadas(this, &horasTrabajadas);
+    employee_getSueldo(this, &sueldo);
+
+    printf("%-5d%-20s%-7d%-6d\n", id, nombre, horasTrabajadas, sueldo);
+}
 
 
 

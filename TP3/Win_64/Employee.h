@@ -31,6 +31,7 @@ int employeeSortById(void * empleadoA, void * empleadoB);
 int employeeSortByHorasTrabajadas(void * empleadoA, void *empleadoB);
 int employeeSortBySueldo(void * empleadoA, void *empleadoB);
 
+void employee_printData(Employee* this);
 
 
 

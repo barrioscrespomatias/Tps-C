@@ -97,3 +97,47 @@
 
 1533133022 e:\laboratorio 8-10\tp3\win_64\parser.h
 
+1542642393 source:e:\repositorio github\trabajopracticon1-master\utn\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1542190716 e:\repositorio github\trabajopracticon1-master\utn\utn.h
+
+1542651761 source:e:\repositorio github\trabajopracticon1-master\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"../../UTN/utn.h"
+
+1542190716 e:\repositorio github\trabajopracticon1-master\tp3\win_64\linkedlist.h
+
+1542555774 e:\repositorio github\trabajopracticon1-master\tp3\win_64\employee.h
+
+1542190716 e:\repositorio github\trabajopracticon1-master\tp3\win_64\parser.h
+
+1542651353 source:e:\repositorio github\trabajopracticon1-master\tp3\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1542651353 source:e:\repositorio github\trabajopracticon1-master\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1542190716 e:\repositorio github\trabajopracticon1-master\tp3\win_64\controller.h
+
+1542644860 source:e:\repositorio github\trabajopracticon1-master\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+

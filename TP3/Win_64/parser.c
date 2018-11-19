@@ -12,32 +12,25 @@
  */
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    Employee *pNuevoEmployee =employee_new();
+    Employee *pNuevoEmployee;
 
     char idSrtAux[50], nombreAuxSrt[50], horasTrabajadasSrtAux[50], sueldoSrtAux[50];
     int leidos;
 
     fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",idSrtAux,nombreAuxSrt,horasTrabajadasSrtAux,sueldoSrtAux);
-//    printf("1");
-//    system("pause");
 
     while(!feof(pFile))
     {
-//        printf("2");
-//        system("pause");
         leidos =fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",idSrtAux,nombreAuxSrt,horasTrabajadasSrtAux,sueldoSrtAux);
 
         if(leidos == 4)
         {
             pNuevoEmployee = employee_newParametros(idSrtAux,nombreAuxSrt,horasTrabajadasSrtAux,sueldoSrtAux);
             ll_add(pArrayListEmployee,pNuevoEmployee);
-            //printf("\n %d %s %d %.2f", pNuevoEmployee->id, pNuevoEmployee->nombre, pNuevoEmployee->horasTrabajadas, pNuevoEmployee->sueldo);
         }
 
         else if(leidos != 4)
         {
-//            printf("3");
-//            system("pause");
             if(!feof(pFile))
             {
               printf("Hubo un error\n");
@@ -64,21 +57,20 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    Employee *nuevoEmployeeAux = employee_new();
-    int cargaEmpleados;
-    int retorno =0;
+    Employee *archivo_Binario;
+    int cantidad;
 
     while(!feof(pFile))
     {
-        cargaEmpleados = fread(nuevoEmployeeAux, sizeof(Employee),1,pFile);
-        if(cargaEmpleados == 1)
+        archivo_Binario = employee_new();
+        cantidad = fread(archivo_Binario, sizeof(Employee),1,pFile);
+        if(cantidad == 1 && archivo_Binario != NULL)
         {
-            ll_add(pArrayListEmployee,nuevoEmployeeAux);
-            printf("%d %s %d %.2f",nuevoEmployeeAux->id, nuevoEmployeeAux->nombre, nuevoEmployeeAux->horasTrabajadas, nuevoEmployeeAux->sueldo);
-            retorno = 1;
+            ll_add(pArrayListEmployee,archivo_Binario);
         }
-
     }
 
-    return retorno;
+    fclose(pFile);
+
+    return 1;
 }
