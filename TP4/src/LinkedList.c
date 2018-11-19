@@ -536,6 +536,11 @@ LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* cloneArray = NULL;
 
+    if(this!= NULL)
+    {
+        cloneArray = ll_subList(this,0,ll_len(this));
+    }
+
     return cloneArray;
 }
 
@@ -550,6 +555,49 @@ LinkedList* ll_clone(LinkedList* this)
 int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 {
     int returnAux =-1;
+
+    Node*pPrimero = NULL;
+    Node*pSegundo = NULL;
+    Node*pAuxiliar = NULL;
+
+    int i, j;
+
+    if(this!= NULL && pFunc != NULL && (order == 0 || order == 1))
+    {
+        for(i=0; i<ll_len(this)-1; i++)
+        {
+            pPrimero = ll_get(this,i);
+            for(j=i+1; j<ll_len(this); j++)
+            {
+                pSegundo = ll_get(this,j);
+
+                if(order == 0)
+                {
+                    if(pFunc(pPrimero,pSegundo)<0)
+                    {
+                        pAuxiliar = pSegundo;
+                        pSegundo = pPrimero;
+                        pPrimero = pAuxiliar;
+                    }
+                }
+                else if(pFunc(pPrimero,pSegundo)>0)
+                {
+                    pAuxiliar = pPrimero;
+                    pPrimero = pSegundo;
+                    pSegundo = pAuxiliar;
+
+                }
+
+                ll_set(this,i,pPrimero);
+                ll_set(this,j,pSegundo);
+
+            }
+        }
+
+        returnAux = 0;
+    }
+
+
 
     return returnAux;
 
